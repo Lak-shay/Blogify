@@ -13,6 +13,7 @@ const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
 
+
 app.use(
   cors({
     origin: "*"
@@ -20,6 +21,7 @@ app.use(
 );
 
 dotenv.config();
+const port = process.env.PORT || 5000;
 
 // api calls are taken from postman desktop agent from chrome.
 // after doing the app.use api call starts to work. The users also starts to get saved in the mongodb cloud server.
@@ -57,6 +59,6 @@ app.use("/", (req, res) => {
   console.log("Hey this is main url.");
 })
 
-app.listen("5000", () => {
+app.listen(port, () => {
   console.log("Backend is running");
 })
